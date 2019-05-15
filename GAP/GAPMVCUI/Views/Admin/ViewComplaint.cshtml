@@ -1,0 +1,23 @@
+﻿@model GAPMVCUI.Models.ComplaintViewModel
+
+@{
+    ViewBag.Title = "ViewComplaint";
+}
+
+@Html.Partial("_pvComplaint", Model)
+
+
+<div class="row">
+    <div class="col-md-12">
+        @using (Html.BeginForm("ApproveReject", "Admin", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(Model => Model.Id)
+            <div class="form-group">
+                <input type="submit" id="btnApprove" name="btnApprove" value="Approve" class="btn btn-success btn-lg" />
+                <input type="submit" id="btnReject" name="btnReject" value="Reject" class="btn btn-danger btn-lg" />
+            </div>
+        }
+    </div>
+</div>
+

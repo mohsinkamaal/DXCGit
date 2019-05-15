@@ -1,0 +1,20 @@
+﻿@model GAPMVCUI.Models.ComplaintViewModel
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h2>@Model.Category_Of_Crime</h2>
+                <h2>@Model.Incident_Date_And_Time</h2>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">@Model.Suspect_Name</h4>
+                <h4 class="card-title">@Model.Details</h4>
+                <h5>@Model.District</h5>
+                <h5>@Model.State</h5>
+                <h3>@Model.Information_Source</h3>
+                <p class="card-text">@Html.Raw(Model.Additional_Information)</p>
+            </div>
+        </div>
+    </div>
+</div>

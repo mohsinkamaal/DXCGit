@@ -1,0 +1,30 @@
+﻿@model IEnumerable<GAPMVCUI.Models.ComplaintViewModel>
+
+@{
+    ViewBag.Title = "ViewComplaints";
+}
+
+<div class="row">
+    <div class="col-md-12">
+            @foreach (var item in Model)
+            {
+        <div class="card">
+            <div class="card-header">
+                <h2><span class="small float-right">@item.UserName</span></h2>
+                <h2>@item.Category_Of_Crime</h2>
+                <h2>@item.Incident_Date_And_Time</h2>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">@item.Suspect_Name</h4>
+                <h4 class="card-title">@item.Details</h4>
+                <h5>@item.City</h5>
+                <h5>@item.State</h5>
+                <h3>@item.Information_Source</h3>
+                <p class="card-text">@item.Additional_Information</p>
+                @Html.ActionLink("View", "ViewComplaint", "CmpLog", new { item.Id}, new { @class="btn btn-primary"})
+            </div>
+        </div>
+            }
+    </div>
+</div>
+

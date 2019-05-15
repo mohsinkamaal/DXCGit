@@ -1,0 +1,37 @@
+﻿@model IEnumerable<GAPMVCUI.Models.ComplaintViewModel>
+
+@{
+    ViewBag.Title = "Complaints";
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Incident_Date_And_Time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category_Of_Crime)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Incident_Date_And_Time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category_Of_Crime)
+        </td>
+        <td>
+            @Html.ActionLink("View", "ViewComplaint", "CmpLog", new { id = item.Id }, null)
+        </td>
+    </tr>
+}
+
+</table>
